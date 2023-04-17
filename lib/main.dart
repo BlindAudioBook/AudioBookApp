@@ -1,3 +1,6 @@
+import 'package:blind_spot/ExplorePage/explorePage.dart';
+import 'package:blind_spot/LibraryPage/libraryPage.dart';
+import 'package:blind_spot/NowPlayingPage/nowPlayingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -9,13 +12,20 @@ void main() {
   ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int currentIndex = 0;
+  List<Widget> _screen = [ExplorePage(),NowPlayingPage(), LibraryPage()];
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: (currentIndex!=1)?AppBar(
         title: Text(
           "Hi User!",
           style: GoogleFonts.lato(
@@ -32,22 +42,29 @@ class MyApp extends StatelessWidget {
             child: IconButton(onPressed: () {}, icon: Icon(Icons.settings, color: Colors.black,)),
           )
         ],
-      ),
-      body: Container(
-        child: Text("Bains"),
-      ),
+      ):null,
+      body: _screen[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (index){
+          setState(() {
+            currentIndex = index;
+          });
+        },
+        backgroundColor: currentIndex==1?Colors.blue:Colors.white,
+        selectedItemColor:currentIndex==1?Colors.white:Colors.blue,
+        elevation: currentIndex==1?0:30,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.explore, size: 25,), label: "Explore", ),
           BottomNavigationBarItem(icon: Icon(Icons.music_note, size: 40,), label: "Now playing"),
           BottomNavigationBarItem(icon: Icon(Icons.book_online, size: 25,), label: "Library")
         ],
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: currentIndex!=1?FloatingActionButton(
         onPressed: (){},
         child: Icon(Icons.add),
         tooltip: "Upload Content",
-      ),
+      ):null,
     );
   }
 }
