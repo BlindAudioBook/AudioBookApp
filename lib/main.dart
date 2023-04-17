@@ -1,4 +1,5 @@
 import 'package:blind_spot/ExplorePage/explorePage.dart';
+import 'package:blind_spot/HomePage/homePage.dart';
 import 'package:blind_spot/LibraryPage/libraryPage.dart';
 import 'package:blind_spot/NowPlayingPage/nowPlayingPage.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int currentIndex = 0;
-  List<Widget> _screen = [ExplorePage(),NowPlayingPage(), LibraryPage()];
+  List<Widget> _screen = [HomePage(),NowPlayingPage(), LibraryPage()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
