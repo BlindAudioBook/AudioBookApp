@@ -1,4 +1,5 @@
 import 'package:blind_spot/components/homePageHero.dart';
+import 'package:blind_spot/components/recommendations.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -34,18 +35,7 @@ class _HomePageState extends State<HomePage> {
             height: MediaQuery.of(context).size.height *0.23,
             width: MediaQuery.of(context).size.width *0.8,
           ),
-          Container(
-            color: Colors.yellow,
-            child: Text("options box"),
-            height: 40,
-            width: 300,
-          ),
-          Container(
-            color: Colors.green,
-            child: Text("Recommendation box"),
-            height: 150,
-            width: 300,
-          ),
+          recommendations(),
         ],
       ),
     );

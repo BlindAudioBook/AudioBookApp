@@ -13,7 +13,7 @@ class _homePageHeroState extends State<homePageHero> {
     {
       "title": "Lovish",
       "desc": "this is the description of the story",
-      "color": 0xFFFF56FF,
+      "color": 0x704056FF,
       "imageURL":
           "https://c.saavncdn.com/758/295-Sidhu-Moose-Wala--English-2021-20210922022502-500x500.jpg",
       "audioURL":

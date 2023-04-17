@@ -1,4 +1,3 @@
-import 'package:blind_spot/ExplorePage/explorePage.dart';
 import 'package:blind_spot/HomePage/homePage.dart';
 import 'package:blind_spot/LibraryPage/libraryPage.dart';
 import 'package:blind_spot/NowPlayingPage/nowPlayingPage.dart';
