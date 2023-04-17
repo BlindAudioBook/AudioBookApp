@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MaterialApp(
-    title: "BlindSpot",
+    title: "Blind Spot",
     home: MyApp(),
     debugShowCheckedModeBanner: false,
   ));
